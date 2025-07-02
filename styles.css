@@ -1,0 +1,541 @@
+:root {
+    --azul-oscuro: #1a365d;
+    --azul-medio: #2c5282;
+    --azul-claro: #4299e1;
+    --beige: #f5e8d0;
+    --dorado: #d4af37;
+    --gris-oscuro: #2d3748;
+    --gris-medio: #4a5568;
+    --gris-claro: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: var(--gris-oscuro);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('arch.JPG');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--dorado);
+    color: var(--azul-oscuro);
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.btn:hover {
+    background-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+    40% {transform: translateY(-20px) translateX(-50%);}
+    60% {transform: translateY(-10px) translateX(-50%);}
+}
+
+/* Navbar */
+nav {
+    background-color: var(--azul-oscuro);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 10px;
+    color: var(--dorado);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: var(--azul-claro);
+}
+
+/* Main content */
+section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', serif;
+    color: var(--azul-oscuro);
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background-color: var(--dorado);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Qué es un Archivo */
+.archivo-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.archivo-text {
+    padding-right: 20px;
+}
+
+.archivo-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.archivo-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.archivo-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.archivo-image:hover img {
+    transform: scale(1.05);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--beige);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+    color: var(--azul-oscuro);
+}
+
+/* Archivística como labor */
+.labor-container {
+    background-color: var(--azul-oscuro);
+    color: white;
+    padding: 60px 5%;
+    border-radius: 8px;
+    margin: 60px 0;
+}
+
+.labor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.labor-card {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.labor-card:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-5px);
+}
+
+.labor-card h3 {
+    color: var(--dorado);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Normativas Internacionales */
+.normativas-container {
+    background-color: var(--gris-claro);
+    padding: 60px 5%;
+    border-radius: 8px;
+}
+
+.normativas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.normativa-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.normativa-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.normativa-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.normativa-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.normativa-card:hover .normativa-img img {
+    transform: scale(1.1);
+}
+
+.normativa-content {
+    padding: 25px;
+}
+
+.normativa-content h3 {
+    color: var(--azul-oscuro);
+    margin-bottom: 10px;
+}
+
+/* Ley 279 SIPAR */
+.ley-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin: 60px 0;
+}
+
+.ley-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.ley-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ley-content h3 {
+    color: var(--azul-oscuro);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.ley-list {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.ley-list li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.ley-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--dorado);
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* Consejo Internacional de Archivos */
+.cia-container {
+    background-color: var(--azul-oscuro);
+    color: white;
+    padding: 60px 5%;
+    border-radius: 8px;
+    margin-top: 60px;
+}
+
+.cia-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cia-logo {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+}
+
+.cia-logo i {
+    font-size: 4rem;
+    color: var(--azul-oscuro);
+}
+
+.cia-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    background: rgba(255,255,255,0.1);
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-item h4 {
+    font-size: 2.5rem;
+    color: var(--dorado);
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--gris-oscuro);
+    color: white;
+    padding: 60px 5% 30px;
+    margin-top: 60px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col h4 {
+    color: var(--dorado);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: var(--gris-claro);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--dorado);
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--dorado);
+    color: var(--azul-oscuro);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .archivo-container, .ley-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .archivo-text {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-links li a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    section {
+        padding: 60px 20px;
+    }
+}
